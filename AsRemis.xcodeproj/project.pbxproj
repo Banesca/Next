@@ -70,7 +70,6 @@
 		ED0D81DB1FC77298007EF6CA /* CompanyAcountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D81DA1FC77298007EF6CA /* CompanyAcountEntity.swift */; };
 		ED0D81DD1FC78029007EF6CA /* EnterpriceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D81DC1FC78029007EF6CA /* EnterpriceEntity.swift */; };
 		ED0D81DF1FC78BCA007EF6CA /* CenterAcountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D81DE1FC78BCA007EF6CA /* CenterAcountEntity.swift */; };
-		ED3B3C3B20063463009EAC65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3B3C3A20063463009EAC65 /* Assets.xcassets */; };
 		ED3B3C3D200636FC009EAC65 /* TravelLocationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B3C3C200636FC009EAC65 /* TravelLocationEntity.swift */; };
 		ED3B3C3F20063714009EAC65 /* TravelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B3C3E20063714009EAC65 /* TravelServices.swift */; };
 		ED3B3C4120063772009EAC65 /* TraveInfoSendEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B3C4020063772009EAC65 /* TraveInfoSendEntity.swift */; };
@@ -98,6 +97,7 @@
 		EDCEF1CE1FC66DC900BF7183 /* listLiquidationDriverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEF1CD1FC66DC900BF7183 /* listLiquidationDriverEntity.swift */; };
 		EDCEF1D01FC726CB00BF7183 /* ModelByBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEF1CF1FC726CB00BF7183 /* ModelByBrand.swift */; };
 		FF30FE3F2006A8E900811660 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF30FE3E2006A8E900811660 /* GoogleService-Info.plist */; };
+		FF30FE412006CCA100811660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF30FE402006CCA100811660 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,7 +166,6 @@
 		ED0D81DA1FC77298007EF6CA /* CompanyAcountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAcountEntity.swift; sourceTree = "<group>"; };
 		ED0D81DC1FC78029007EF6CA /* EnterpriceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriceEntity.swift; sourceTree = "<group>"; };
 		ED0D81DE1FC78BCA007EF6CA /* CenterAcountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAcountEntity.swift; sourceTree = "<group>"; };
-		ED3B3C3A20063463009EAC65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../IDEIos/AsRemis/Assets.xcassets; sourceTree = "<group>"; };
 		ED3B3C3C200636FC009EAC65 /* TravelLocationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelLocationEntity.swift; sourceTree = "<group>"; };
 		ED3B3C3E20063714009EAC65 /* TravelServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelServices.swift; sourceTree = "<group>"; };
 		ED3B3C4020063772009EAC65 /* TraveInfoSendEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraveInfoSendEntity.swift; sourceTree = "<group>"; };
@@ -196,6 +195,7 @@
 		EEE88B7117D729141A8BA4CB /* Pods-AsRemis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsRemis.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsRemis/Pods-AsRemis.release.xcconfig"; sourceTree = "<group>"; };
 		FEE6DA9BFFDFA21D989B10CB /* Pods_AsRemis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsRemis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF30FE3E2006A8E900811660 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF30FE402006CCA100811660 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,7 +293,7 @@
 				A0480BD81F7BFD6800D1AE21 /* AppDelegate.swift */,
 				A0480BDA1F7BFD6800D1AE21 /* ViewController.swift */,
 				A0480BDC1F7BFD6800D1AE21 /* Main.storyboard */,
-				ED3B3C3A20063463009EAC65 /* Assets.xcassets */,
+				FF30FE402006CCA100811660 /* Assets.xcassets */,
 				A0480BE41F7BFD6800D1AE21 /* LaunchScreen.storyboard */,
 				A0480BE71F7BFD6800D1AE21 /* Info.plist */,
 				FF30FE3E2006A8E900811660 /* GoogleService-Info.plist */,
@@ -521,6 +521,7 @@
 			files = (
 				A0480BE61F7BFD6800D1AE21 /* LaunchScreen.storyboard in Resources */,
 				A083D2171F7D631F005F1798 /* AsRemis.png in Resources */,
+				FF30FE412006CCA100811660 /* Assets.xcassets in Resources */,
 				ED3B3C4B20063AC0009EAC65 /* MotoristaBRTableViewCell.xib in Resources */,
 				A083D21D1F7D7059005F1798 /* time.png in Resources */,
 				A0AD6D331FA1118D00EC0CCF /* SelectorViewController.xib in Resources */,
@@ -533,7 +534,6 @@
 				A083D2211F7D716D005F1798 /* noimage.png in Resources */,
 				EDB9FE1B1FA1A19C001D67E4 /* CreateUserSubmenuTableViewCell.xib in Resources */,
 				A083D2111F7D59DD005F1798 /* car.png in Resources */,
-				ED3B3C3B20063463009EAC65 /* Assets.xcassets in Resources */,
 				ED8483F91FA3B21C00D1BA8F /* AlertPickerSelectorViewController.xib in Resources */,
 				EDBF211A1FC83F8E009D9E75 /* TripCanceledTableViewCell.xib in Resources */,
 				A083D21B1F7D7059005F1798 /* phone.png in Resources */,
