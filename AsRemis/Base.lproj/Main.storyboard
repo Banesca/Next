@@ -2693,7 +2693,7 @@
         <!--Get Ride View Controller-->
         <scene sceneID="hC8-yo-YRy">
             <objects>
-                <viewController storyboardIdentifier="GetRideViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oTC-dP-Axg" customClass="GetRideViewController" customModule="IDE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GetRideViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oTC-dP-Axg" customClass="GetRideViewController" customModule="AsRemis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TEj-Lq-UbX"/>
                         <viewControllerLayoutGuide type="bottom" id="Jmq-e2-rHo"/>
@@ -3137,7 +3137,7 @@
         <!--Services Active View Controller-->
         <scene sceneID="AvF-11-Tt7">
             <objects>
-                <viewController storyboardIdentifier="ServicesActiveViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dnm-E0-yZ1" customClass="ServicesActiveViewController" customModule="IDE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServicesActiveViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dnm-E0-yZ1" customClass="ServicesActiveViewController" customModule="AsRemis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BFH-lz-Thi"/>
                         <viewControllerLayoutGuide type="bottom" id="MTY-tA-y5t"/>
@@ -3228,7 +3228,7 @@
         <!--Services Actions Detail View Controller-->
         <scene sceneID="iRb-22-YVw">
             <objects>
-                <viewController storyboardIdentifier="ServicesActionsDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mcz-g9-yja" customClass="ServicesActionsDetailViewController" customModule="IDE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServicesActionsDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mcz-g9-yja" customClass="ServicesActionsDetailViewController" customModule="AsRemis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YWv-eC-t79"/>
                         <viewControllerLayoutGuide type="bottom" id="DkT-xV-awj"/>
@@ -3305,14 +3305,13 @@
                                                 <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXQ-or-8Rv">
                                                     <rect key="frame" x="8" y="15" width="30" height="30"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="GJe-va-E3f"/>
+                                                        <constraint firstAttribute="width" constant="30" id="e8b-yh-3Pu"/>
                                                         <constraint firstAttribute="width" secondItem="KXQ-or-8Rv" secondAttribute="height" multiplier="1:1" id="xU5-Pv-8lh"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="102" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBI-8t-jip">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBI-8t-jip">
                                                     <rect key="frame" x="58" y="20" width="242" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="iz7-df-bc2"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -3321,10 +3320,9 @@
                                             <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="CBI-8t-jip" secondAttribute="trailing" constant="20" id="AJz-uC-5Wk"/>
-                                                <constraint firstItem="CBI-8t-jip" firstAttribute="centerY" secondItem="KXQ-or-8Rv" secondAttribute="centerY" id="cew-8x-1Dd"/>
-                                                <constraint firstItem="KXQ-or-8Rv" firstAttribute="top" secondItem="7fT-Ev-G3n" secondAttribute="top" constant="15" id="lWY-Kc-b2u"/>
+                                                <constraint firstItem="KXQ-or-8Rv" firstAttribute="centerY" secondItem="7fT-Ev-G3n" secondAttribute="centerY" id="GBH-G7-Og0"/>
+                                                <constraint firstItem="CBI-8t-jip" firstAttribute="centerY" secondItem="7fT-Ev-G3n" secondAttribute="centerY" id="I3B-fL-21Z"/>
                                                 <constraint firstItem="KXQ-or-8Rv" firstAttribute="leading" secondItem="7fT-Ev-G3n" secondAttribute="leading" constant="8" id="lza-kk-etR"/>
-                                                <constraint firstAttribute="bottom" secondItem="KXQ-or-8Rv" secondAttribute="bottom" constant="15" id="ush-ZX-Ahx"/>
                                                 <constraint firstItem="CBI-8t-jip" firstAttribute="leading" secondItem="KXQ-or-8Rv" secondAttribute="trailing" constant="20" id="z79-7I-07X"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -3361,7 +3359,7 @@
         <!--Make Reservation View Controller-->
         <scene sceneID="jh6-Bb-cjs">
             <objects>
-                <viewController storyboardIdentifier="MakeReservationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vrP-go-FUq" customClass="MakeReservationViewController" customModule="IDE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeReservationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vrP-go-FUq" customClass="MakeReservationViewController" customModule="AsRemis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nuw-bR-iMF"/>
                         <viewControllerLayoutGuide type="bottom" id="EmZ-B3-6sS"/>
@@ -3552,7 +3550,7 @@
         <!--Request Services View Controller-->
         <scene sceneID="Dyt-An-cWP">
             <objects>
-                <viewController storyboardIdentifier="RequestServicesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ki4-ms-i8I" customClass="RequestServicesViewController" customModule="IDE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RequestServicesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ki4-ms-i8I" customClass="RequestServicesViewController" customModule="AsRemis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mLZ-Mt-p7v"/>
                         <viewControllerLayoutGuide type="bottom" id="7ma-so-VOK"/>
