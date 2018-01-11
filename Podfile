@@ -8,7 +8,7 @@ target 'AsRemis' do
     pod 'YPDrawSignatureView', '~> 1.1.2'
     pod 'NVActivityIndicatorView', '~> 4.0.1'
     pod 'SwiftSocket'
-    pod 'Socket.IO-Client-Swift', '~> 11.1.3'
+    pod 'Socket.IO-Client-Swift', '~> 13.1.0'
     pod 'EPSignature', '~> 1.0'
     pod 'Firebase/Core'
     pod 'Firebase/Storage'

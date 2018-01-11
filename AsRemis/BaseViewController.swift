@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
         
         self.navigationController?.navigationBar.barTintColor = UIColor.GrayAsRemis
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         prepareNavigationRight()
     }
     
