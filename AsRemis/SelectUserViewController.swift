@@ -27,6 +27,9 @@ class SelectUserViewController: UIViewController,UIGestureRecognizerDelegate {
         let driverTap = UITapGestureRecognizer(target: self, action: #selector(self.newClientTap(sender:)))
         driverTap.delegate = self
         newDriverView.addGestureRecognizer(driverTap)
+        newDriverView.backgroundColor = UIColor.GrayAsRemis
+        newClientView.backgroundColor = UIColor.GrayAsRemis
+        
     }
 
     override func didReceiveMemoryWarning() {

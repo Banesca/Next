@@ -1325,7 +1325,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AsRemis.png" translatesAutoresizingMaskIntoConstraints="NO" id="CxK-xB-IvP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="REMISESNEXT.png" translatesAutoresizingMaskIntoConstraints="NO" id="CxK-xB-IvP">
                                 <rect key="frame" x="96" y="72" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CxK-xB-IvP" secondAttribute="height" multiplier="1:1" id="zmj-iB-O1z"/>
@@ -1346,7 +1346,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ub-4o-Io5">
                                 <rect key="frame" x="36" y="240" width="248" height="30"/>
-                                <color key="backgroundColor" red="0.93498581647872925" green="0.93225628137588501" blue="0.9350927472114563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dZN-aR-03s"/>
                                 </constraints>
@@ -1356,7 +1356,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NmQ-dS-yKD">
                                 <rect key="frame" x="36" y="300" width="248" height="30"/>
-                                <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kq4-mF-8u2"/>
                                 </constraints>
@@ -1378,7 +1378,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93323183059692383" green="0.9333917498588562" blue="0.93322181701660156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NmQ-dS-yKD" firstAttribute="top" secondItem="2Ub-4o-Io5" secondAttribute="bottom" constant="30" id="0eT-dn-mar"/>
                             <constraint firstItem="ewf-C2-hjt" firstAttribute="leading" secondItem="hQH-7E-dfl" secondAttribute="leadingMargin" constant="30" id="28d-5h-wsz"/>
@@ -3790,7 +3790,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AsRemis.png" width="180" height="180"/>
+        <image name="REMISESNEXT.png" width="462" height="459"/>
         <image name="ic_airline_seat_recline_normal_48pt" width="48" height="48"/>
         <image name="ic_airplanemode_active_48pt" width="48" height="48"/>
         <image name="ic_attach_money_white" width="24" height="24"/>

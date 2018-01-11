@@ -22,12 +22,13 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "AsRemis!"
+        navigationItem.title = "Next!"
         
         self.navigationController?.navigationBar.barTintColor = UIColor.GrayAsRemis
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.hideKeyboardWhenTappedAround()
+        loginBtn.backgroundColor = UIColor.GrayAsRemis
         getCurrentUser()
     }
 

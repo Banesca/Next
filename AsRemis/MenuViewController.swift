@@ -112,6 +112,8 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0{
             let header = tableView.dequeueReusableCell(withIdentifier: "SectionHeader")
+            let background = header?.viewWithTag(100) as! UIView
+            background.backgroundColor = UIColor.GrayAsRemis
             let imgIcon = header?.viewWithTag(101) as! UIImageView
             imgIcon.image = SingletonsObject.sharedInstance.userSelected?.user?.imageProfile ?? UIImage(named: "user.png")
             imgIcon.layer.cornerRadius = imgIcon.frame.width/2

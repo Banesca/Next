@@ -21,11 +21,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>AsRemis requiere acceso a la camara</string>
+	<string>Next requiere acceso a la camara</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>AsRemis utilizara tu ubicación para permitirte solicitar un servicio</string>
+	<string>Next utilizara tu ubicación para permitirte solicitar un servicio</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>AsRemis requerie acceso a tu galeria de imagenes</string>
+	<string>Next requerie acceso a tu galeria de imagenes</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

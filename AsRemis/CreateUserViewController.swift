@@ -305,6 +305,7 @@ extension CreateUserViewController: UITableViewDataSource, UITableViewDelegate {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CreateUserSubmenuTableViewCell", for: indexPath) as! CreateUserSubmenuTableViewCell
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 cell.numberLbl.text = "\(indexPath.row+1)"
+                cell.numberLbl.backgroundColor = UIColor.GrayAsRemis
                 cell.titleLbl.text = statusInfoArr[indexPath.row]["title"]!
                 cell.titleLbl1.text = submenuInfoArr[0]["title"]!
                 cell.titleLbl2.text = submenuInfoArr[1]["title"]!
@@ -312,6 +313,7 @@ extension CreateUserViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.valueBtn1.setTitle(submenuInfoArr[0]["information"], for: UIControlState.normal)
                 cell.valueBtn2.setTitle(submenuInfoArr[1]["information"], for: UIControlState.normal)
                 cell.valueBtn3.setTitle(submenuInfoArr[2]["information"], for: UIControlState.normal)
+                cell.continueBtn.backgroundColor = UIColor.GrayAsRemis
                 cell.domainTxtField.text = domainSelected
                 if !isDriver{
                     cell.domainTxtField.isHidden = true
@@ -324,6 +326,7 @@ extension CreateUserViewController: UITableViewDataSource, UITableViewDelegate {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CreateUserTableViewCell", for: indexPath) as! CreateUserTableViewCell
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 cell.numberLbl.text = "\(indexPath.row+1)"
+                cell.numberLbl.backgroundColor = UIColor.GrayAsRemis
                 cell.valueTxtField.text = statusInfoArr[indexPath.row]["information"]!
                 cell.titleLbl.text = statusInfoArr[indexPath.row]["title"]!
                 if(cell.titleLbl.text == "Contraseña"){
@@ -340,6 +343,7 @@ extension CreateUserViewController: UITableViewDataSource, UITableViewDelegate {
                         cell.valueTxtField.keyboardType = .default
                     }
                 }
+                cell.continueBtn.backgroundColor = UIColor.GrayAsRemis
                 
                 if(indexPath.row == statusInfoArr.count - 1){
                     cell.valueTxtField.isHidden = true
@@ -354,6 +358,7 @@ extension CreateUserViewController: UITableViewDataSource, UITableViewDelegate {
             let lblNumber = cell.viewWithTag(101) as! UILabel
             lblNumber.layer.cornerRadius = lblNumber.bounds.size.height/2
             lblNumber.clipsToBounds = true
+            lblNumber.backgroundColor = UIColor.GrayAsRemisWithAlpha
             let lblTitle = cell.viewWithTag(102) as! UILabel
             
             lblTitle.text = statusInfoArr[indexPath.row]["title"]!

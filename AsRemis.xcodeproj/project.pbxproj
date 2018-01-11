@@ -96,8 +96,9 @@
 		EDCEF1CC1FC6432D00BF7183 /* BrandEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEF1CB1FC6432D00BF7183 /* BrandEntity.swift */; };
 		EDCEF1CE1FC66DC900BF7183 /* listLiquidationDriverEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEF1CD1FC66DC900BF7183 /* listLiquidationDriverEntity.swift */; };
 		EDCEF1D01FC726CB00BF7183 /* ModelByBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEF1CF1FC726CB00BF7183 /* ModelByBrand.swift */; };
+		FF13291120080E4C009DA6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF30FE402006CCA100811660 /* Assets.xcassets */; };
+		FF132913200810BE009DA6F8 /* REMISESNEXT.png in Resources */ = {isa = PBXBuildFile; fileRef = FF132912200810BB009DA6F8 /* REMISESNEXT.png */; };
 		FF30FE3F2006A8E900811660 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF30FE3E2006A8E900811660 /* GoogleService-Info.plist */; };
-		FF30FE412006CCA100811660 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF30FE402006CCA100811660 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,7 +109,7 @@
 		A022B0131F7EABAD004388E2 /* ServicesUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesUser.swift; sourceTree = "<group>"; };
 		A022B0161F7EAD93004388E2 /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		A022B0191F7EDFE5004388E2 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		A0480BD51F7BFD6800D1AE21 /* AsRemis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsRemis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0480BD51F7BFD6800D1AE21 /* Next.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Next.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0480BD81F7BFD6800D1AE21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0480BDA1F7BFD6800D1AE21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0480BDD1F7BFD6800D1AE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,6 +195,7 @@
 		EDCEF1CF1FC726CB00BF7183 /* ModelByBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelByBrand.swift; sourceTree = "<group>"; };
 		EEE88B7117D729141A8BA4CB /* Pods-AsRemis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsRemis.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsRemis/Pods-AsRemis.release.xcconfig"; sourceTree = "<group>"; };
 		FEE6DA9BFFDFA21D989B10CB /* Pods_AsRemis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsRemis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF132912200810BB009DA6F8 /* REMISESNEXT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = REMISESNEXT.png; sourceTree = "<group>"; };
 		FF30FE3E2006A8E900811660 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF30FE402006CCA100811660 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -276,7 +278,7 @@
 		A0480BD61F7BFD6800D1AE21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0480BD51F7BFD6800D1AE21 /* AsRemis.app */,
+				A0480BD51F7BFD6800D1AE21 /* Next.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +346,7 @@
 				A083D2181F7D7059005F1798 /* phone.png */,
 				A083D2191F7D7059005F1798 /* right.png */,
 				A083D21A1F7D7059005F1798 /* time.png */,
+				FF132912200810BB009DA6F8 /* REMISESNEXT.png */,
 				A083D2161F7D631F005F1798 /* AsRemis.png */,
 				A083D2121F7D5A67005F1798 /* location.png */,
 				A083D20E1F7D51D1005F1798 /* user.png */,
@@ -458,9 +461,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A0480BD41F7BFD6800D1AE21 /* AsRemis */ = {
+		A0480BD41F7BFD6800D1AE21 /* Next */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0480BEA1F7BFD6800D1AE21 /* Build configuration list for PBXNativeTarget "AsRemis" */;
+			buildConfigurationList = A0480BEA1F7BFD6800D1AE21 /* Build configuration list for PBXNativeTarget "Next" */;
 			buildPhases = (
 				1881C87D35F1881D67FE2C3C /* [CP] Check Pods Manifest.lock */,
 				A0480BD11F7BFD6800D1AE21 /* Sources */,
@@ -473,9 +476,9 @@
 			);
 			dependencies = (
 			);
-			name = AsRemis;
+			name = Next;
 			productName = AsRemis;
-			productReference = A0480BD51F7BFD6800D1AE21 /* AsRemis.app */;
+			productReference = A0480BD51F7BFD6800D1AE21 /* Next.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -509,7 +512,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A0480BD41F7BFD6800D1AE21 /* AsRemis */,
+				A0480BD41F7BFD6800D1AE21 /* Next */,
 			);
 		};
 /* End PBXProject section */
@@ -521,9 +524,9 @@
 			files = (
 				A0480BE61F7BFD6800D1AE21 /* LaunchScreen.storyboard in Resources */,
 				A083D2171F7D631F005F1798 /* AsRemis.png in Resources */,
-				FF30FE412006CCA100811660 /* Assets.xcassets in Resources */,
 				ED3B3C4B20063AC0009EAC65 /* MotoristaBRTableViewCell.xib in Resources */,
 				A083D21D1F7D7059005F1798 /* time.png in Resources */,
+				FF13291120080E4C009DA6F8 /* Assets.xcassets in Resources */,
 				A0AD6D331FA1118D00EC0CCF /* SelectorViewController.xib in Resources */,
 				A083D2271F7D9DB8005F1798 /* CreateUserTableViewCell.xib in Resources */,
 				A083D21C1F7D7059005F1798 /* right.png in Resources */,
@@ -532,6 +535,7 @@
 				A0480BDE1F7BFD6800D1AE21 /* Main.storyboard in Resources */,
 				A0AD6D381FA13FEE00EC0CCF /* TripCanceledViewController.xib in Resources */,
 				A083D2211F7D716D005F1798 /* noimage.png in Resources */,
+				FF132913200810BE009DA6F8 /* REMISESNEXT.png in Resources */,
 				EDB9FE1B1FA1A19C001D67E4 /* CreateUserSubmenuTableViewCell.xib in Resources */,
 				A083D2111F7D59DD005F1798 /* car.png in Resources */,
 				ED8483F91FA3B21C00D1BA8F /* AlertPickerSelectorViewController.xib in Resources */,
@@ -883,7 +887,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0480BEA1F7BFD6800D1AE21 /* Build configuration list for PBXNativeTarget "AsRemis" */ = {
+		A0480BEA1F7BFD6800D1AE21 /* Build configuration list for PBXNativeTarget "Next" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0480BEB1F7BFD6800D1AE21 /* Debug */,
