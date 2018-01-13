@@ -942,7 +942,7 @@ extension Http {
             "Content-Type": "application/json"
         ]
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            //print(response.result.value as Any)   // result of response serialization
+            print(response.result.value as Any)   // result of response serialization
             
             guard let data = response.data,
                 let dataJson = try? JSONSerialization.jsonObject(with: data) as? [NSDictionary] else {
@@ -952,12 +952,17 @@ extension Http {
             }
             
             var fleetType = [FleetTypeEntity]()
-            for entitieJson in dataJson!{
-                let entity = FleetTypeEntity.init(jsonData: entitieJson as! [String : Any])
-                fleetType.append(entity)
+            if dataJson != nil{
+                
+                for entitieJson in dataJson!{
+                    let entity = FleetTypeEntity.init(jsonData: entitieJson as! [String : Any])
+                    fleetType.append(entity)
+                }
+                
+                completion(fleetType)
+            }else{
+                completion(nil)
             }
-            
-            completion(fleetType)
         }
     }
     

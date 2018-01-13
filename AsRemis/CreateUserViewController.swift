@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class CreateUserViewController: UIViewController{
+class CreateUserViewController: UIViewController, NVActivityIndicatorViewable{
     
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var nextQuestionBtn: UIButton!
@@ -19,6 +20,7 @@ class CreateUserViewController: UIViewController{
     var isDriver = false
     var statusInfoArr = [Dictionary<String,String>]()
     var submenuInfoArr = [Dictionary<String,String>]()
+    var driverInfo = NSMutableDictionary()
     
     var optionsMenu1 = [BrandEntity]()
     var optionsMenu2 = [ModelByBrand]()
@@ -34,6 +36,9 @@ class CreateUserViewController: UIViewController{
     var company = CompanyAcountEntity()
     var center = CenterAcountEntity()
     var domainSelected = ""
+    var timeSelected = ""
+    var photoSelected = ""
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +55,11 @@ class CreateUserViewController: UIViewController{
         
         userDetailsTV.register(UINib(nibName: "CreateUserTableViewCell", bundle: nil), forCellReuseIdentifier: "CreateUserTableViewCell")
         userDetailsTV.register(UINib(nibName: "CreateUserSubmenuTableViewCell", bundle: nil), forCellReuseIdentifier: "CreateUserSubmenuTableViewCell")
+        userDetailsTV.register(UINib(nibName: "MotoristaBRTableViewCell", bundle: nil), forCellReuseIdentifier: "MotoristaBRTableViewCell")
+        userDetailsTV.register(UINib(nibName: "VehicleBRTableViewCell", bundle: nil), forCellReuseIdentifier: "VehicleBRTableViewCell")
         userDetailsTV.delegate = self
         userDetailsTV.dataSource = self
+        //imagePicker.delegate = self
         self.hideKeyboardWhenTappedAround()
     }
 
@@ -66,6 +74,7 @@ class CreateUserViewController: UIViewController{
             let progress = Float(indexSelected)/Float(statusInfoArr.count-1)
             progressView.setProgress(progress, animated: true)
             userDetailsTV.reloadData()
+            userDetailsTV.setContentOffset(CGPoint.zero, animated: true)
         }
     }
 
@@ -75,8 +84,65 @@ class CreateUserViewController: UIViewController{
             let progress = Float(indexSelected)/Float(statusInfoArr.count-1)
             progressView.setProgress(progress, animated: true)
             userDetailsTV.reloadData()
+            userDetailsTV.setContentOffset(CGPoint.zero, animated: true)
         }else{
             createUser()
+        }
+    }
+    
+    func prepareIDEInfoUser(){
+        statusInfoArr = [Dictionary<String,String>]()
+        submenuInfoArr = [Dictionary<String,String>]()
+        if(isDriver){
+            statusInfoArr.append(["title":"Cadastro de motorista","information":""])
+            statusInfoArr.append(["title":"Cadastro de veículos","information":""])
+            statusInfoArr.append(["title":"Confirmar","information":""])
+            
+            submenuInfoArr.append(["title":"Categoría","information":"Selecione"])
+            submenuInfoArr.append(["title":"Marca","information":"Selecione"])
+            submenuInfoArr.append(["title":"Modelo","information":"Selecione"])
+            
+            driverInfo.setValue("", forKey: "dEmail")
+            driverInfo.setValue("", forKey: "dPass")
+            driverInfo.setValue("", forKey: "dName")
+            driverInfo.setValue("", forKey: "dLastname")
+            driverInfo.setValue("", forKey: "dPhone")
+            driverInfo.setValue(UIImage.init(named: "nopic"), forKey: "dProfileImg")
+            driverInfo.setValue("", forKey: "dRG")
+            driverInfo.setValue("", forKey: "dCPF")
+            driverInfo.setValue("AAAA/MM/DD", forKey: "dExpiration")
+            driverInfo.setValue(UIImage.init(named: "nopic"), forKey: "dCNHImg")
+            
+            driverInfo.setValue("Selecione", forKey: "vType")
+            driverInfo.setValue("Selecione", forKey: "vBrand")
+            driverInfo.setValue("Selecione", forKey: "vModel")
+            driverInfo.setValue("", forKey: "vCor")
+            driverInfo.setValue("", forKey: "vPlaca")
+            driverInfo.setValue("", forKey: "vAssure")
+            driverInfo.setValue("", forKey: "vPolicy")
+            driverInfo.setValue("AAAA/MM/DD", forKey: "vExpiration")
+            driverInfo.setValue(UIImage.init(named: "nopic"), forKey: "vPolicyImg")
+            driverInfo.setValue("AAAA/MM/DD", forKey: "vDoc")
+            driverInfo.setValue(UIImage.init(named: "nopic"), forKey: "vDocImg")
+            driverInfo.setValue("", forKey: "vResume")
+            driverInfo.setValue("", forKey: "vConfirm")
+            driverInfo.setValue("", forKey: "vAcceptEmail")
+            
+            getBOInfoForDriver()
+            getFleetType()
+        }else{
+            statusInfoArr.append(["title":"Nombre","information":""])
+            statusInfoArr.append(["title":"Apellido","information":""])
+            statusInfoArr.append(["title":"Telefono","information":""])
+            statusInfoArr.append(["title":"Email","information":""])
+            statusInfoArr.append(["title":"Contraseña","information":""])
+            statusInfoArr.append(["title":"CUETA/C.Costo","information":""])
+            statusInfoArr.append(["title":"Confirmar","information":""])
+            
+            submenuInfoArr.append(["title":"Empresa","information":"Seleccionar"])
+            submenuInfoArr.append(["title":"Cuenta","information":"Seleccionar"])
+            submenuInfoArr.append(["title":"Centro Costo","information":"Seleccionar"])
+            getFleetType()
         }
     }
     
@@ -97,6 +163,7 @@ class CreateUserViewController: UIViewController{
             submenuInfoArr.append(["title":"Categoría","information":"Seleccionar"])
             
             self.getBOInfoForDriver()
+            getFleetType()
         }else{
             statusInfoArr.append(["title":"Nombre","information":""])
             statusInfoArr.append(["title":"Apellido","information":""])
@@ -109,6 +176,7 @@ class CreateUserViewController: UIViewController{
             submenuInfoArr.append(["title":"Empresa","information":"Seleccionar"])
             submenuInfoArr.append(["title":"Cuenta","information":"Seleccionar"])
             submenuInfoArr.append(["title":"Centro Costo","information":"Seleccionar"])
+            getFleetType()
         }
     }
     
@@ -137,6 +205,8 @@ class CreateUserViewController: UIViewController{
         let alertController = UIAlertController(title: "Exito", message: "Se creo la cuenta exitosamente", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
+            
+            SingletonsObject.sharedInstance.clearUserSelected()
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNavigationController")
             UIApplication.shared.keyWindow?.rootViewController = viewController;
@@ -159,7 +229,9 @@ class CreateUserViewController: UIViewController{
                 client.isVehicleProvider = 1
                 client.isRequestMobil = 1
                 let fleet = FleetTypeEntity(brand: modelSelected.idVehicleBrandAsigned!, model: modelSelected.nameVehicleModel!, type: fleetSelected.idVehicleType!, domainS: domainSelected)
+                startAnimating(CGSize.init(width: 50, height: 50), message: "Espere um momento", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
                 http.addPluDriver(client, fleet: fleet, completion: { (response) -> Void in
+                    self.stopAnimating()
                     if response!{
                         self.createUserSuccessfull()
                     }else{
@@ -181,7 +253,9 @@ class CreateUserViewController: UIViewController{
                 client.idCompanyKf = Int(company.idCompanyAcount!)! as NSNumber //submenuInfoArr[0]["information"]!
                 client.idCompanyAcount = Int(company.idCompanyAcount!)! as NSNumber
                 client.idCostCenter = Int(center.idCostCenter!)! as NSNumber
+                startAnimating(CGSize.init(width: 50, height: 50), message: "Espere um momento", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
                 http.addClient(client, completion: { (response) -> Void in
+                    self.stopAnimating()
                     if response!{
                         self.createUserSuccessfull()
                     }else{
@@ -242,7 +316,9 @@ extension CreateUserViewController{
     //MARK: Methods for driverWS
     func getBOInfoForDriver(){
         let http = Http.init()
+        startAnimating(CGSize.init(width: 50, height: 50), message: "Espere um momento", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
         http.brand({ (brands) -> Void in
+            self.stopAnimating()
             if brands != nil{
                 for brand in brands!{
                     self.optionsMenu1.append(brand)
@@ -254,7 +330,9 @@ extension CreateUserViewController{
     func getBrandModel(brand:BrandEntity){
         brandSelected = brand
         let http = Http.init()
+        startAnimating(CGSize.init(width: 50, height: 50), message: "Espere um momento", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
         http.byidBrand(brand.idVehicleBrand!, completion: {(models) -> Void in
+            self.stopAnimating()
             if models != nil{
                 for model in models!{
                     self.optionsMenu2.append(model)
@@ -263,10 +341,12 @@ extension CreateUserViewController{
         })
     }
     
-    func getFleetType(model:ModelByBrand){
-        modelSelected = model
+    
+    func getFleetType(){
         let http = Http.init()
+        startAnimating(CGSize.init(width: 50, height: 50), message: "Espere um momento", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
         http.fleetType({(fleets) -> Void in
+            self.stopAnimating()
             if fleets != nil{
                 for fleet in fleets!{
                     self.optionsMenu3.append(fleet)
@@ -483,12 +563,13 @@ extension CreateUserViewController: AlertPickerDelegate{
                 submenuInfoArr[0]["information"] = optionsMenu1[index].nameVehicleBrand
                 break
             case 2:
-                getFleetType(model: optionsMenu2[index])
                 submenuInfoArr[1]["information"] = optionsMenu2[index].nameVehicleModel
                 break
             default:
-                fleetSelected = optionsMenu3[index]
-                submenuInfoArr[2]["information"] = optionsMenu3[index].vehiclenType
+                if optionsMenu3.count > 0{
+                    fleetSelected = optionsMenu3[index]
+                    submenuInfoArr[2]["information"] = optionsMenu3[index].vehiclenType
+                }
             }
         }else{
             switch andTag {

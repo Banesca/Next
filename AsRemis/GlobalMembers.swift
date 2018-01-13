@@ -12,7 +12,8 @@ class GlobalMembers: NSObject {
     let socketIp = "ws://54.245.175.10"
     let masterIp = "http://54.245.175.10"
     //let urlDeveloper = "http://54.245.175.10/IDEbrasil/Api/index.php/"
-    let urlDeveloper = "http://54.245.175.10/developer/Api/index.php/"
+    //let urlDeveloper = "http://54.245.175.10/developer/Api/index.php/"
+    let urlDeveloper = "http://54.245.175.10/next/Api/index.php/"
     //let urlMaster = "http://54.245.175.10/as_nube/Api/index.php/"
     //as_remis_web/Api/index.php/client
     var appCurentVersion = ""

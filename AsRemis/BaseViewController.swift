@@ -248,6 +248,7 @@ extension BaseViewController{
     }
     
     @objc func logOutMenu(_ sender : UIButton){
+        SingletonsObject.sharedInstance.clearUserSelected()
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNavigationController")
         UIApplication.shared.keyWindow?.rootViewController = viewController;
