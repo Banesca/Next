@@ -1377,6 +1377,12 @@
                                     <segue destination="FCd-PP-WMd" kind="show" id="y9j-Hf-pw6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdd-Vg-sce">
+                                <rect key="frame" x="16" y="545.5" width="288" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.68723688471502586" green="0.68723688471502586" blue="0.68723688471502586" alpha="0.78259793133802813" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1388,6 +1394,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="NmQ-dS-yKD" secondAttribute="trailing" constant="20" id="Mda-bZ-jar"/>
                             <constraint firstItem="Kzy-7N-Gu1" firstAttribute="top" secondItem="NmQ-dS-yKD" secondAttribute="bottom" constant="20" id="Q68-9b-8RQ"/>
                             <constraint firstItem="CxK-xB-IvP" firstAttribute="centerX" secondItem="hQH-7E-dfl" secondAttribute="centerX" id="QEP-gh-eoE"/>
+                            <constraint firstItem="xdd-Vg-sce" firstAttribute="trailing" secondItem="hQH-7E-dfl" secondAttribute="trailingMargin" id="TFu-N3-TEW"/>
+                            <constraint firstItem="xdd-Vg-sce" firstAttribute="leading" secondItem="hQH-7E-dfl" secondAttribute="leadingMargin" id="bHC-Va-2mc"/>
                             <constraint firstItem="Kzy-7N-Gu1" firstAttribute="leading" secondItem="hQH-7E-dfl" secondAttribute="leading" constant="46" id="eYt-FL-QoN"/>
                             <constraint firstItem="CxK-xB-IvP" firstAttribute="leading" secondItem="hQH-7E-dfl" secondAttribute="leadingMargin" constant="80" id="gXw-3s-alG"/>
                             <constraint firstItem="CxK-xB-IvP" firstAttribute="top" secondItem="EKq-HH-o40" secondAttribute="bottom" constant="8" id="iTw-IO-EH9"/>
@@ -1395,11 +1403,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="2Ub-4o-Io5" secondAttribute="trailing" constant="20" id="le1-vk-0DH"/>
                             <constraint firstItem="NmQ-dS-yKD" firstAttribute="leading" secondItem="hQH-7E-dfl" secondAttribute="leadingMargin" constant="20" id="lfu-XJ-mlf"/>
                             <constraint firstItem="ewf-C2-hjt" firstAttribute="top" secondItem="Kzy-7N-Gu1" secondAttribute="bottom" constant="40" id="rkG-ma-Lhd"/>
+                            <constraint firstItem="VH4-uD-HfV" firstAttribute="top" secondItem="xdd-Vg-sce" secondAttribute="bottom" constant="8" id="u0f-fM-vcE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tVG-AH-tHc"/>
                     <connections>
                         <outlet property="asRemisImg" destination="CxK-xB-IvP" id="nu2-PC-bzO"/>
+                        <outlet property="buildVersionLbl" destination="xdd-Vg-sce" id="p4a-GM-P1L"/>
                         <outlet property="createAccountBtn" destination="ewf-C2-hjt" id="5LM-EI-QPw"/>
                         <outlet property="loginBtn" destination="Kzy-7N-Gu1" id="BCl-gt-7hs"/>
                         <outlet property="mailTxtField" destination="2Ub-4o-Io5" id="YAw-y6-Ugf"/>
@@ -1714,7 +1724,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tC8-a7-tbT" id="wQt-fc-0o4">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="816-sr-SXD">

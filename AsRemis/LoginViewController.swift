@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var createAccountBtn: UIButton!
+    @IBOutlet weak var buildVersionLbl: UILabel!
     
     
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.hideKeyboardWhenTappedAround()
         loginBtn.backgroundColor = UIColor.GrayAsRemis
+        buildVersionLbl.text = "Versión: \(SingletonsObject.sharedInstance.appCurrentVersion)"
         getCurrentUser()
     }
 
@@ -125,11 +127,16 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
             }
         }
         
+        var isDriver = 0
+        if driverId.intValue > 0{
+            isDriver = 1
+        }
+        
         let person = NSManagedObject(entity: entity, insertInto: managedContext)
         person.setValue(user.user?.emailUser, forKeyPath: "mail")
         person.setValue(passwordTxtField.text, forKeyPath: "password")
         person.setValue(user.user?.firstNameUser, forKeyPath: "username")
-        person.setValue(user.user?.idDriver, forKeyPath: "isDriver")
+        person.setValue(isDriver, forKeyPath: "isDriver")
         
         do {
             try managedContext.save()
