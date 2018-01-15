@@ -12,7 +12,7 @@ import SocketIO
 class SocketAsRemis: NSObject {
     
     func createSocketConnectionWith(user userId:NSNumber){
-        let dir = "\(GlobalMembers().masterIp):3300?idUser=\(userId)&uri=developer"
+        let dir = "\(GlobalMembers().masterIp):3300?idUser=\(userId)&uri=next"
         let manager = SocketManager(socketURL: URL(string: dir)!, config: [.log(true), .compress])
         let socket = manager.defaultSocket
         

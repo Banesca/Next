@@ -17,7 +17,7 @@ final class SingletonsObject: NSObject {
     
     private override init() {super.init()}
     
-    func clearUserSelected(){
+    func saveUserSelectedWith(mail:String, pass:String){
         
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -35,10 +35,10 @@ final class SingletonsObject: NSObject {
         }
         
         let person = NSManagedObject(entity: entity, insertInto: managedContext)
-        person.setValue("", forKeyPath: "mail")
-        person.setValue("", forKeyPath: "password")
+        person.setValue(mail, forKeyPath: "mail")
+        person.setValue(pass, forKeyPath: "password")
         person.setValue("", forKeyPath: "username")
-        person.setValue("", forKeyPath: "isDriver")
+        person.setValue(0, forKeyPath: "isDriver")
         
         do {
             try managedContext.save()

@@ -137,7 +137,7 @@ extension Http{
             "Content-Type": "application/json"
         ]
         Alamofire.request(url, method: .post, parameters: jsonUser, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            print(response.result.value as Any)   // result of response serialization
+            //print(response.result.value as Any)   // result of response serialization
             
             guard let data = response.data,
                 let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
@@ -1018,10 +1018,10 @@ extension Http {
         
     }
     
-    func addPluDriver(_ user:UserCreateEntity, fleet: FleetTypeEntity, completion:@escaping (Bool?) -> Void){
+    func addPluDriver(_ user:UserCreateEntity, fleet: FleetTypeEntity, completion:@escaping (NSNumber?) -> Void){
         if !isConnectedToInternet(){
             showInternetError()
-            completion(false)
+            completion(nil)
             return
         }
         let url = GlobalMembers().urlDeveloper.appending("driver/plusLite")
@@ -1030,15 +1030,16 @@ extension Http {
             "Content-Type": "application/json"
         ]
         Alamofire.request(url, method: .post, parameters: jsonUser, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            print(response.response as Any)
             print(response.result.value as Any)   // result of response serialization
             
             guard let jsonValue = response.result.value as? NSNumber else{
                 print("Nil data received from addPluDriver service")
-                completion(false)
+                completion(nil)
                 return
             }
             
-            completion(jsonValue.boolValue)
+            completion(jsonValue)
         }
         
     }

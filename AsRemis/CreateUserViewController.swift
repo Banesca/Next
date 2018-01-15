@@ -206,7 +206,10 @@ class CreateUserViewController: UIViewController, NVActivityIndicatorViewable{
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
             
-            SingletonsObject.sharedInstance.clearUserSelected()
+            let email = self.statusInfoArr[4]["information"]! as String
+            let pass = self.statusInfoArr[5]["information"]! as String
+            
+            SingletonsObject.sharedInstance.saveUserSelectedWith(mail: email, pass: pass)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNavigationController")
             UIApplication.shared.keyWindow?.rootViewController = viewController;
@@ -232,7 +235,7 @@ class CreateUserViewController: UIViewController, NVActivityIndicatorViewable{
                 startAnimating(CGSize.init(width: 50, height: 50), message: "Espere um momento", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
                 http.addPluDriver(client, fleet: fleet, completion: { (response) -> Void in
                     self.stopAnimating()
-                    if response!{
+                    if (response?.intValue ?? 0) > 0 {
                         self.createUserSuccessfull()
                     }else{
                         self.errorInUserCreated()
