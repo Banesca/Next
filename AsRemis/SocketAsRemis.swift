@@ -12,7 +12,7 @@ import SocketIO
 class SocketAsRemis: NSObject {
     
     func createSocketConnectionWith(user userId:NSNumber){
-        let dir = "\(GlobalMembers().masterIp):3300?idUser=\(userId)&uri=next"
+        let dir = "\(GlobalMembers().masterIp):\(GlobalMembers().socketPort)?idUser=\(userId)&uri=next"
         let manager = SocketManager(socketURL: URL(string: dir)!, config: [.log(true), .compress])
         let socket = manager.defaultSocket
         
@@ -29,6 +29,7 @@ class SocketAsRemis: NSObject {
             
             ack.with("Got your currentAmount", "dude")
         }
+        
         
         socket.connect()
     }

@@ -11,6 +11,7 @@ import UIKit
 class GlobalMembers: NSObject {
     let socketIp = "ws://54.245.175.10"
     let masterIp = "http://54.245.175.10"
+    let socketPort = "3000"
     //let urlDeveloper = "http://54.245.175.10/IDEbrasil/Api/index.php/"
     //let urlDeveloper = "http://54.245.175.10/developer/Api/index.php/"
     let urlDeveloper = "http://54.245.175.10/next/Api/index.php/"
