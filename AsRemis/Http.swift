@@ -1287,8 +1287,8 @@ extension Http{
     }
     
     func showInternetError(){
-        let alertController = UIAlertController(title: "Erro de conexão", message: "Não foi possível conectar-se ao serviço, verifique sua conexão com a internet", preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Aceitar", style: UIAlertActionStyle.default) {
+        let alertController = UIAlertController(title: "Error de conexión", message: "No fue posible conectar con el servidor, favor de verificar su conexión a internet", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
             print("OK")
         }
