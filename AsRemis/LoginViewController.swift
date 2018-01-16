@@ -98,23 +98,8 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
             }
         })
         
-        var driverId = NSNumber.init(value: 0)
-        if user.user?.idDriver != nil{
-            driverId = (user.user?.idDriver)!
-        }
-        let token = TokenEntity.init(tokenFB: "", idUser: (user.user?.idUser)!, idDriver: driverId, latVersionApp: SingletonsObject.sharedInstance.appCurrentVersion as String)
         let socket = SocketAsRemis()
         socket.createSocketConnectionWith(user: (user.user?.idUser)!)
-        
-        startAnimating(CGSize.init(width: 50, height: 50), message: "Espere un momento", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
-        http.getToken(token, completion: { (isValidToken) -> Void in
-            self.stopAnimating()
-            if isValidToken{
-                //SocketServices().prepareSocket(GlobalMembers().masterIp, userId: (user.user?.idUser)!, urlBase: GlobalMembers().urlDeveloper)
-            }else{
-                
-            }
-        })
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let entityName = "UserEntityManaged"
@@ -127,6 +112,10 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
             }
         }
         
+        var driverId = NSNumber.init(value: 0)
+        if user.user?.idDriver != nil{
+            driverId = (user.user?.idDriver)!
+        }
         var isDriver = 0
         if driverId.intValue > 0{
             isDriver = 1

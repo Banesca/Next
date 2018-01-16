@@ -163,9 +163,9 @@ extension Http{
             "Content-Type": "application/json"
         ]
         Alamofire.request(url, method: .post, parameters: jsonUser, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            print(response.result.value as Any)   // result of response serialization
+            //print(response.result.value as Any)   // result of response serialization
             guard let jsonValue = response.result.value as? NSNumber else{
-                print("Nil data received from getToken service")
+                //print("Nil data received from getToken service")
                 completion(false)
                 return
             }

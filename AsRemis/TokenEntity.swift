@@ -14,6 +14,7 @@ class TokenEntity: NSObject {
     var idUser: NSNumber?
     var idDriver: NSNumber?
     var latVersionApp: String?
+    var idSocketMap: String?
     
     override init(){
         super.init()
@@ -21,13 +22,15 @@ class TokenEntity: NSObject {
         idUser = 0
         idDriver = 0
         latVersionApp = ""
+        idSocketMap = ""
     }
     
-    init(tokenFB:String, idUser:NSNumber, idDriver: NSNumber, latVersionApp: String){
+    init(tokenFB:String, idUser:NSNumber, idDriver: NSNumber, latVersionApp: String, idSocketMap: String){
         self.tokenFB = tokenFB
         self.idUser = idUser
         self.idDriver = idDriver
         self.latVersionApp = latVersionApp
+        self.idSocketMap = idSocketMap
     }
     
     init(jsonData: [String: Any]){
@@ -40,6 +43,7 @@ class TokenEntity: NSObject {
         }
         tokenFB = jsonData["tokenFB"] as? String
         latVersionApp = jsonData["latVersionApp"] as? String
+        idSocketMap = jsonData["idSocketMap"] as? String
     }
     
     func toJSON() -> [String: Any]{
@@ -47,7 +51,8 @@ class TokenEntity: NSObject {
             "tokenFB": tokenFB as Any,
             "idUser": idUser as Any,
             "idDriver": idDriver as Any,
-            "latVersionApp": latVersionApp as Any
+            "latVersionApp": latVersionApp as Any,
+            "idSocketMap": idSocketMap as Any
         ]
     }
 }
