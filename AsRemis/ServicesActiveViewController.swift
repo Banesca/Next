@@ -53,7 +53,7 @@ class ServicesActiveViewController: UIViewController {
         if SingletonsObject.sharedInstance.currentTrip != nil{
             servicesBtn.setTitle(SingletonsObject.sharedInstance.currentTrip?.nameStatusTravel, for: .normal)
             distanceLbl.text = SingletonsObject.sharedInstance.currentTrip?.distanceLabel
-            priceLbl.text = SingletonsObject.sharedInstance.currentTrip?.totalAmount
+            priceLbl.text = SingletonsObject.sharedInstance.currentTrip?.amountCalculate
         }else{
             priceLbl.text = "0$"
             distanceLbl.text = "0Km"

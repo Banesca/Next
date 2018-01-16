@@ -57,11 +57,13 @@ extension ConfirmTripViewController: UIGestureRecognizerDelegate{
     @objc func handleTapCredit(sender: UITapGestureRecognizer? = nil) {
         self.dismiss(animated: true, completion: nil)
         SingletonsObject.sharedInstance.currentTrip = nil
+        NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
     }
     
     @objc func handleTapCash(sender: UITapGestureRecognizer? = nil) {
         self.dismiss(animated: true, completion: nil)
         SingletonsObject.sharedInstance.currentTrip = nil
+        NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
     }
     
     @objc func handleTapSign(sender: UITapGestureRecognizer? = nil) {
