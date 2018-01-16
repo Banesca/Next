@@ -9,9 +9,11 @@
 import UIKit
 
 class GlobalMembers: NSObject {
-    let socketIp = "ws://54.245.175.10"
+    let socketIp = "as-nube.com"
     let masterIp = "http://54.245.175.10"
     let socketPort = "3000"
+    let socketProtocol = "https"
+    let socketInstance = "next"
     //let urlDeveloper = "http://54.245.175.10/IDEbrasil/Api/index.php/"
     //let urlDeveloper = "http://54.245.175.10/developer/Api/index.php/"
     let urlDeveloper = "http://54.245.175.10/next/Api/index.php/"
