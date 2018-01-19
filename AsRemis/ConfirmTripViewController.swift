@@ -21,7 +21,7 @@ class ConfirmTripViewController: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var payWithCreditCardView: UIView!
     @IBOutlet weak var payWithCashView: UIView!
     @IBOutlet weak var signView: UIView!
-    var idPaymentFormKf = 0
+    var idPaymentFormKf = NSNumber(value: 1)
     var signatureImg = UIImage()
    
     override func viewDidLoad() {
@@ -56,14 +56,14 @@ class ConfirmTripViewController: UIViewController, NVActivityIndicatorViewable {
 
 extension ConfirmTripViewController: UIGestureRecognizerDelegate{
     @objc func handleTapCredit(sender: UITapGestureRecognizer? = nil) {
-        idPaymentFormKf = 0
+         idPaymentFormKf = NSNumber(value: 0)
 //        self.dismiss(animated: true, completion: nil)
 //        SingletonsObject.sharedInstance.currentTrip = nil
 //        NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
     }
     
     @objc func handleTapCash(sender: UITapGestureRecognizer? = nil) {
-        idPaymentFormKf = 1
+         idPaymentFormKf = NSNumber(value: 1)
 //        self.dismiss(animated: true, completion: nil)
 //        SingletonsObject.sharedInstance.currentTrip = nil
 //        NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
@@ -106,7 +106,7 @@ extension ConfirmTripViewController: EPSignatureDelegate{
                 amountParking: 0,
                 amountTiemeSlepp: 0,
                 timeSleppGps: "0",
-                idPaymentFormKf: idPaymentFormKf) //TODO; Revisar valor
+                idPaymentFormKf: self.idPaymentFormKf) //TODO; Revisar valor
             let finisEnable = Int(SingletonsObject.sharedInstance.userSelected?.params?[19].value ?? "0")!
             if finisEnable == 1{
                 http.finishMobil(travelLocation,completion: {(travels) -> Void in
