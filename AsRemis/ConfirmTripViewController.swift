@@ -21,6 +21,7 @@ class ConfirmTripViewController: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var payWithCreditCardView: UIView!
     @IBOutlet weak var payWithCashView: UIView!
     @IBOutlet weak var signView: UIView!
+    var idPaymentFormKf = 0
     var signatureImg = UIImage()
    
     override func viewDidLoad() {
@@ -55,15 +56,17 @@ class ConfirmTripViewController: UIViewController, NVActivityIndicatorViewable {
 
 extension ConfirmTripViewController: UIGestureRecognizerDelegate{
     @objc func handleTapCredit(sender: UITapGestureRecognizer? = nil) {
-        self.dismiss(animated: true, completion: nil)
-        SingletonsObject.sharedInstance.currentTrip = nil
-        NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
+        idPaymentFormKf = 0
+//        self.dismiss(animated: true, completion: nil)
+//        SingletonsObject.sharedInstance.currentTrip = nil
+//        NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
     }
     
     @objc func handleTapCash(sender: UITapGestureRecognizer? = nil) {
-        self.dismiss(animated: true, completion: nil)
-        SingletonsObject.sharedInstance.currentTrip = nil
-        NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
+        idPaymentFormKf = 1
+//        self.dismiss(animated: true, completion: nil)
+//        SingletonsObject.sharedInstance.currentTrip = nil
+//        NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
     }
     
     @objc func handleTapSign(sender: UITapGestureRecognizer? = nil) {
@@ -91,6 +94,37 @@ extension ConfirmTripViewController: EPSignatureDelegate{
         let http = Http.init()
         startAnimating(CGSize.init(width: 50, height: 50), message: "Finalizando viaje", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
         http.uploadImag(signatureImg, name: "\(SingletonsObject.sharedInstance.currentTrip?.idTravel ?? 0)", completion: { (response) -> Void in
+            let travelLocation = TravelLocationEntity(
+                idTravelKf: (SingletonsObject.sharedInstance.currentTrip?.idTravel)!,
+                totalAmount: NSNumber(value:LocationTripObject.sharedInstance.totalCost),
+                distanceGps: NSNumber(value:(LocationTripObject.sharedInstance.distancesInReturn + LocationTripObject.sharedInstance.distanceNormal)),
+                distanceGpsLabel: "\((LocationTripObject.sharedInstance.distancesInReturn + LocationTripObject.sharedInstance.distanceNormal))",
+                location: "",
+                longLocation: "\(LocationTripObject.sharedInstance.userPosition?.coordinate.longitude ?? 0.0)",
+                latLocation: "\(LocationTripObject.sharedInstance.userPosition?.coordinate.latitude ?? 0.0)",
+                amounttoll: 0,
+                amountParking: 0,
+                amountTiemeSlepp: 0,
+                timeSleppGps: "0",
+                idPaymentFormKf: idPaymentFormKf) //TODO; Revisar valor
+            let finisEnable = Int(SingletonsObject.sharedInstance.userSelected?.params?[19].value ?? "0")!
+            if finisEnable == 1{
+                http.finishMobil(travelLocation,completion: {(travels) -> Void in
+                    self.stopAnimating()
+                    NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
+                })
+                
+            }else{
+                //TODO: Revisar prefinish
+                //http.preFinishMobil(travelLocation,completion: {(travels) -> Void in
+                http.finishMobil(travelLocation,completion: {(travels) -> Void in
+                    self.stopAnimating()
+                    NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
+                })
+                
+            }
+            
+            
             self.stopAnimating()
             SingletonsObject.sharedInstance.currentTrip = nil
             self.dismiss(animated: true, completion: nil)
