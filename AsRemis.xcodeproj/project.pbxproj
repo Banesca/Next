@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		866E52D991911F7C279D9651 /* Pods_Next.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A520CF91F3F8CF1B954D8F /* Pods_Next.framework */; };
 		A006ED311F9560730040D835 /* GlobalMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A006ED301F9560730040D835 /* GlobalMembers.swift */; };
 		A01DFBE21F83FAD600DAC0CE /* AsRemis+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01DFBE11F83FAD600DAC0CE /* AsRemis+UIColor.swift */; };
 		A022B0111F7EAB77004388E2 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022B0101F7EAB77004388E2 /* Http.swift */; };
@@ -65,7 +66,6 @@
 		A0C670D01F99495C00050882 /* PlaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C670CF1F99495C00050882 /* PlaceEntity.swift */; };
 		A0C670D41F99BB2400050882 /* ReasonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C670D31F99BB2400050882 /* ReasonEntity.swift */; };
 		A0C670D61F9A62CF00050882 /* InfoTravelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C670D51F9A62CF00050882 /* InfoTravelEntity.swift */; };
-		DC440AEADFAF59B212EC898B /* Pods_AsRemis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE6DA9BFFDFA21D989B10CB /* Pods_AsRemis.framework */; };
 		ED0D81D91FC72F72007EF6CA /* FleetTypeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D81D81FC72F72007EF6CA /* FleetTypeEntity.swift */; };
 		ED0D81DB1FC77298007EF6CA /* CompanyAcountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D81DA1FC77298007EF6CA /* CompanyAcountEntity.swift */; };
 		ED0D81DD1FC78029007EF6CA /* EnterpriceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D81DC1FC78029007EF6CA /* EnterpriceEntity.swift */; };
@@ -102,6 +102,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B5093AFB9B2B7DFA82DF46B /* Pods-Next.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Next.release.xcconfig"; path = "Pods/Target Support Files/Pods-Next/Pods-Next.release.xcconfig"; sourceTree = "<group>"; };
+		51124D6ABC23A3F0176D8AE9 /* Pods-Next.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Next.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Next/Pods-Next.debug.xcconfig"; sourceTree = "<group>"; };
+		59A520CF91F3F8CF1B954D8F /* Pods_Next.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Next.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92845C2F5D36D6419039FEE4 /* Pods-AsRemis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsRemis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AsRemis/Pods-AsRemis.debug.xcconfig"; sourceTree = "<group>"; };
 		A006ED301F9560730040D835 /* GlobalMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMembers.swift; sourceTree = "<group>"; };
 		A01DFBE11F83FAD600DAC0CE /* AsRemis+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsRemis+UIColor.swift"; sourceTree = "<group>"; };
@@ -205,7 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC440AEADFAF59B212EC898B /* Pods_AsRemis.framework in Frameworks */,
+				866E52D991911F7C279D9651 /* Pods_Next.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				FEE6DA9BFFDFA21D989B10CB /* Pods_AsRemis.framework */,
+				59A520CF91F3F8CF1B954D8F /* Pods_Next.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -445,6 +449,8 @@
 			children = (
 				92845C2F5D36D6419039FEE4 /* Pods-AsRemis.debug.xcconfig */,
 				EEE88B7117D729141A8BA4CB /* Pods-AsRemis.release.xcconfig */,
+				51124D6ABC23A3F0176D8AE9 /* Pods-Next.debug.xcconfig */,
+				0B5093AFB9B2B7DFA82DF46B /* Pods-Next.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -495,7 +501,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = UX49JF8S3B;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -561,7 +567,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AsRemis-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Next-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -574,7 +580,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AsRemis/Pods-AsRemis-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Next/Pods-Next-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/EPSignature/EPSignature.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -603,7 +609,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AsRemis/Pods-AsRemis-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Next/Pods-Next-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3184163F9F84DD27591C5578 /* [CP] Copy Pods Resources */ = {
@@ -612,7 +618,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AsRemis/Pods-AsRemis-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Next/Pods-Next-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
@@ -622,7 +628,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AsRemis/Pods-AsRemis-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Next/Pods-Next-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -833,14 +839,14 @@
 		};
 		A0480BEB1F7BFD6800D1AE21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92845C2F5D36D6419039FEE4 /* Pods-AsRemis.debug.xcconfig */;
+			baseConfigurationReference = 51124D6ABC23A3F0176D8AE9 /* Pods-Next.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = UX49JF8S3B;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AsRemis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -855,21 +861,21 @@
 		};
 		A0480BEC1F7BFD6800D1AE21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEE88B7117D729141A8BA4CB /* Pods-AsRemis.release.xcconfig */;
+			baseConfigurationReference = 0B5093AFB9B2B7DFA82DF46B /* Pods-Next.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Antonio Antonelli (UX49JF8S3B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Antonio Antonelli (UX49JF8S3B)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = UX49JF8S3B;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AsRemis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = apreciasoft.next;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "490de167-551f-47cd-9b44-6629f3ebad2b";
-				PROVISIONING_PROFILE_SPECIFIER = Next;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
