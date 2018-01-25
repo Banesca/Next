@@ -29,22 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SingletonsObject.sharedInstance.appCurrentVersion = nsObject as! String
         FirebaseAsRemis.sharedInstance.checkFoNewTrips()
         
-        if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
-            
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: authOptions,
-                completionHandler: {_, _ in })
-        } else {
-            let settings: UIUserNotificationSettings =
-                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
         }
-        
         application.registerForRemoteNotifications()
-        
         return true
     }
 
@@ -70,6 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("DeviceID for push notification")
+        UserDefaults.standard.set(deviceTokenString, forKey: "TokenPushNotification")
+        UserDefaults.standard.synchronize()
+        print(deviceTokenString)
     }
 
     // MARK: - Core Data stack

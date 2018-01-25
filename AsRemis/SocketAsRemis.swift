@@ -29,7 +29,8 @@ class SocketAsRemis: NSObject {
             }
             
             if driverId.intValue > 0{
-                let token = TokenEntity.init(tokenFB: "", idUser: (SingletonsObject.sharedInstance.userSelected?.user?.idUser)!, idDriver: driverId, latVersionApp: SingletonsObject.sharedInstance.appCurrentVersion as String, idSocketMap: self.manager.defaultSocket.sid)
+                let tokenFB = UserDefaults.standard.object(forKey: "TokenPushNotification") as! String
+                let token = TokenEntity.init(tokenFB: tokenFB, idUser: (SingletonsObject.sharedInstance.userSelected?.user?.idUser)!, idDriver: driverId, latVersionApp: SingletonsObject.sharedInstance.appCurrentVersion as String, idSocketMap: self.manager.defaultSocket.sid)
                 let http = Http.init()
                 http.getToken(token, completion: { (isValidToken) -> Void in
                     if isValidToken{
