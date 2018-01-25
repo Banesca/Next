@@ -9,9 +9,12 @@
 import UIKit
 import SocketIO
 
-class SocketAsRemis: NSObject {
+final class SocketAsRemis: NSObject {
     private var manager = SocketManager(socketURL: URL(string: "\(GlobalMembers().socketProtocol)://\(GlobalMembers().socketIp)")!)
     private var MY_EVENT = "message";
+    
+    static let sharedInstance = SocketAsRemis()
+    private override init() {super.init()}
     
     func createSocketConnectionWith(user userId:NSNumber){
         let dir = "\(GlobalMembers().socketProtocol)://\(GlobalMembers().socketIp):\(GlobalMembers().socketPort)?idUser=\(userId)&uri=\(GlobalMembers().socketInstance)"
@@ -60,6 +63,10 @@ class SocketAsRemis: NSObject {
         
     }
     
+    
+    func closeSocket(){
+        manager.defaultSocket.disconnect()
+    }
     
 }
 
