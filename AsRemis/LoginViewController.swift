@@ -98,8 +98,7 @@ class LoginViewController: UIViewController, NVActivityIndicatorViewable {
             }
         })
         
-        let socket = SocketAsRemis()
-        socket.createSocketConnectionWith(user: (user.user?.idUser)!)
+        SocketAsRemis.sharedInstance.createSocketConnectionWith(user: (user.user?.idUser)!)
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let entityName = "UserEntityManaged"

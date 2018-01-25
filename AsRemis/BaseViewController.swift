@@ -252,6 +252,7 @@ extension BaseViewController{
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNavigationController")
         UIApplication.shared.keyWindow?.rootViewController = viewController;
+        SocketAsRemis.sharedInstance.closeSocket()
     }
 
 }
