@@ -80,7 +80,7 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate{
         let statusLbl = cell.viewWithTag(103) as! UILabel
         
         if ((SingletonsObject.sharedInstance.userSelected?.user?.idDriver?.stringValue) != nil){
-            statusLbl.text = entity.totalAmount
+            statusLbl.text = entity.amountCalculate
             statusLbl.textColor = .green
         }else{
             statusLbl.textColor = .red

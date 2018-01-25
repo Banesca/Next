@@ -163,9 +163,9 @@ extension Http{
             "Content-Type": "application/json"
         ]
         Alamofire.request(url, method: .post, parameters: jsonUser, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            print(response.result.value as Any)   // result of response serialization
+            //print(response.result.value as Any)   // result of response serialization
             guard let jsonValue = response.result.value as? NSNumber else{
-                print("Nil data received from getToken service")
+                //print("Nil data received from getToken service")
                 completion(false)
                 return
             }
@@ -1287,8 +1287,8 @@ extension Http{
     }
     
     func showInternetError(){
-        let alertController = UIAlertController(title: "Erro de conexão", message: "Não foi possível conectar-se ao serviço, verifique sua conexão com a internet", preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Aceitar", style: UIAlertActionStyle.default) {
+        let alertController = UIAlertController(title: "Error de conexión", message: "No fue posible conectar con el servidor, favor de verificar su conexión a internet", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
             print("OK")
         }

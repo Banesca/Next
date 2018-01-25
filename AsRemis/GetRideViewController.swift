@@ -103,6 +103,10 @@ class GetRideViewController: BaseViewController, NVActivityIndicatorViewable{
         NotificationCenter.default.addObserver( self, selector: #selector(self.showTripRequest),name: NSNotification.Name(showTripRequestNotification), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver( self, selector: #selector(self.showTripRequest),name: NSNotification.Name(showTripRequestNotification), object: nil)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
         self.hideTripButtons()
@@ -348,43 +352,7 @@ extension GetRideViewController: UIGestureRecognizerDelegate{
         LocationTripObject.sharedInstance.checkCurrentDistance()
         LocationTripObject.sharedInstance.checkTotalCost()
         LocationTripObject.sharedInstance.stopSendLocation()
-        
-        let http = Http.init()
-        startAnimating(CGSize.init(width: 50, height: 50), message: "Espere un momento", messageFont: UIFont.boldSystemFont(ofSize: 12), type: .ballRotate, color: .white, padding: 0.0, displayTimeThreshold: 10, minimumDisplayTime: 2, backgroundColor: .GrayAlpha, textColor: .white)
-        let travelLocation = TravelLocationEntity(
-            idTravelKf: (SingletonsObject.sharedInstance.currentTrip?.idTravel)!,
-            totalAmount: NSNumber(value:LocationTripObject.sharedInstance.totalCost),
-            distanceGps: NSNumber(value:(LocationTripObject.sharedInstance.distancesInReturn + LocationTripObject.sharedInstance.distanceNormal)),
-            distanceGpsLabel: "\((LocationTripObject.sharedInstance.distancesInReturn + LocationTripObject.sharedInstance.distanceNormal))",
-            location: "",
-            longLocation: "\(LocationTripObject.sharedInstance.userPosition?.coordinate.longitude ?? 0.0)",
-            latLocation: "\(LocationTripObject.sharedInstance.userPosition?.coordinate.latitude ?? 0.0)",
-            amounttoll: 0,
-            amountParking: 0,
-            amountTiemeSlepp: 0,
-            timeSleppGps: "0",
-            idPaymentFormKf: 1) //TODO; Revisar valor
-        let finisEnable = Int(SingletonsObject.sharedInstance.userSelected?.params?[19].value ?? "0")!
-        if finisEnable == 1{
-            http.finishMobil(travelLocation,completion: {(travels) -> Void in
-                self.stopAnimating()
-                self.hideTripButtons()
-                NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
-                NotificationCenter.default.addObserver( self, selector: #selector(self.showTripRequest),name: NSNotification.Name(showTripRequestNotification), object: nil)
-            })
-
-        }else{
-            //TODO: REvisar prefinish
-            //http.preFinishMobil(travelLocation,completion: {(travels) -> Void in
-            http.finishMobil(travelLocation,completion: {(travels) -> Void in
-                self.stopAnimating()
-                self.hideTripButtons()
-                NotificationCenter.default.post(name: Notification.Name(updateViewByTrip),object: nil)
-                NotificationCenter.default.addObserver( self, selector: #selector(self.showTripRequest),name: NSNotification.Name(showTripRequestNotification), object: nil)
-            })
-
-        }
-        
+        self.hideTripButtons()
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ConfirmTripViewController")
         self.present(viewController, animated: true, completion: nil)

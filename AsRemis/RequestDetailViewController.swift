@@ -33,7 +33,7 @@ class RequestDetailViewController: UIViewController, NVActivityIndicatorViewable
         titleLbl.text = request?.codTravel
         clientNameLbl.text = request?.client
         distanceLbl.text = request?.distanceLabel
-        costLbl.text = request?.totalAmount
+        costLbl.text = request?.amountCalculate
         passagersLbl.text = request?.client
         dateLbl.text = request?.dateTravel
         destinationLbl.text = request?.nameDestination

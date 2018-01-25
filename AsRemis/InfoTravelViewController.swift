@@ -67,7 +67,7 @@ class InfoTravelViewController: UIViewController, NVActivityIndicatorViewable {
                 }else{
                     self.dirDestinationLbl.text = " "
                 }
-                self.costLbl.text = trip?.totalAmount
+                self.costLbl.text = trip?.amountCalculate
                 self.distanceLbl.text = trip?.distanceLabel
                 var multiOrigin = ""
                 multiOrigin.append("1)")
